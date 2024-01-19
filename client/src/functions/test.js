@@ -1,3 +1,4 @@
+// A function that makes an HTTP request to BACKEND_URL
 export const getTest = async () => {
     try {
         // const response = await fetch(process.env.BACKEND_URL + '/test', {
