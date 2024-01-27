@@ -1,30 +1,23 @@
 /* Imports */
 const express = require('express');
-const mongoose = require('mongoose');
+const mongoose = require('./db.js') // Connected to MongoDB in this module for modularity's sake
 const morgan = require('morgan');
 const cors = require('cors');
-require('dotenv').config();     // TODO: Figure out what this does
+require('dotenv').config();     // Reads .env file, essentialy 
 
 /* App */
     // Instantiate an express_object.
-    // This will handle HTTP requests coming from a *port
+    // This will handle HTTP requests coming from a port
         // *Port yet to be specified 
 const app = express();
-
-/* db */
-    // Connect to MongoDB database pointed to
-    // by MONGO_URI. 
-    //TODO: Figure out how then() and promises work
-mongoose.connect(process.env.MONGO_URI)
-.then( () => console.log('MongoDB connected'))
-.catch( err => console.log("MongoDB connection error: ", err));
 
 /* middleware */
     // express_object.use(func) passes [request, response]
     // through func as params for *every* HTTP request
     // Any function used in this fashion is considered a 'middleware' function
+const corsOptions = { origin: process.env.FRONTEND_URL }
 app.use(morgan('dev'));
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors(corsOptions));
 
 
 /* routes */
@@ -33,7 +26,10 @@ app.use(cors({ origin: true, credentials: true }));
     // express_object.use(req, testRoutes) routes all requests
     // that start w/ 'req'  to the testRoutes express.Router object
 const testRoutes = require('./routes/test');
-app.use('/', testRoutes);
+app.use('/test', testRoutes);
+
+const blogRoutes = require('./routes/blog')
+app.use('/blog', blogRoutes)
 
 
 /* listen */

@@ -1,14 +1,15 @@
 const express = require('express')
 
-/* Import Controllers */
-const { getTest } = require('../controllers/test')
-
-
 /* API Routes */
     // Create a express.router object
     // Map all requests of '/test' to the getTest function
 const router = express.Router()
-router.get('/test', getTest);
+router.get('/', async (request, response) => {
+    response.status(200).json({
+        message: "Test route is working"
+    });
+})
+
 
 
 /* Export this route */
