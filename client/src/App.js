@@ -1,22 +1,30 @@
 import './App.css';
 import {useState, useEffect} from "react"
-import { getTest } from "./functions/test"
-
-
+import { getPosts } from "./functions/blog"
+import PostList from './components/PostList'
 
 function App() {
-    const [data, setData] = useState("Hello World!");
+    const [posts, setPosts] = useState([]);
+    
+
     useEffect( () => {
-        getTest()
+        console.log('useEffect is running')
+        getPosts()
             .then(response => {
-                setData(response.message);
+                const myPosts = JSON.parse(response.message)
+                console.log("posts: ", typeof(myPosts), myPosts)
+                setPosts(myPosts);
+                // setPosts(response.message);
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log("setPosts ran unsuccseffuly\n", err))
     }, []);
+
+    console.log("posts: ", typeof(posts), posts)
     return (
-        <div className="App">
-            <h1>{data}</h1>
-        </div>
+            <div className="App">
+                <h1>I'm testing</h1>
+                <PostList posts={posts}/>
+            </div>
     );
 }
 

@@ -1,7 +1,7 @@
 const express = require('express')
 const Post = require('../schemas/Post.js')
-// const mongoose = require('../db.js)
 
+// NOTE: the database is accessed via the 'Post' model, which corresponds to the 'posts' collection
 
 async function addPost() {
     const post = await Post.create({ 
@@ -19,9 +19,10 @@ async function getPost() {
 /* API Routes */
 const router = express.Router()
 router.get('/', async (request, response) => {
-    getPost()
+    allPosts = await Post.find()
+    console.log(allPosts)
     response.status(200).json({
-        message: "Entered a new post into the db!"
+        message: JSON.stringify(allPosts) 
     });
 })
 

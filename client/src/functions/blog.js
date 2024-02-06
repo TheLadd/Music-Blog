@@ -1,7 +1,7 @@
 // A function that makes an HTTP request to BACKEND_URL
-export const getTest = async () => {
+export const getPosts = async () => {
     try {
-        // const response = await fetch(process.env.BACKEND_URL + '/test', {
+        // const response = await fetch(process.env.BACKEND_URL + '/blog', {
         // const response = await fetch('http://localhost:8080/test', {
         const response = await fetch('http://localhost:8080/blog', {
             method: 'GET',
@@ -10,7 +10,12 @@ export const getTest = async () => {
                 "Content-Type": "application/json"
             }
         });
+        console.log('getPosts() ran')
         return await response.json()
     } 
-    catch (err) {}
+    catch (err) {
+        console.log('Error occured fetching posts from backend')
+    }
 }
+
+
