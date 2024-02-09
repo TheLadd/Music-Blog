@@ -14,7 +14,7 @@ export const getPosts = async () => {
         return await response.json()
     } 
     catch (err) {
-        console.log('Error occured fetching posts from backend')
+        console.log('Error occured fetching posts from backend\n', err)
     }
 }
 

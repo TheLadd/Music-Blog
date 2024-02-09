@@ -20,7 +20,6 @@ async function getPost() {
 const router = express.Router()
 router.get('/', async (request, response) => {
     allPosts = await Post.find()
-    console.log(allPosts)
     response.status(200).json({
         message: JSON.stringify(allPosts) 
     });
