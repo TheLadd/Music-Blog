@@ -8,12 +8,12 @@ async function addPost() {
         title: "Test Title",
         body: "lorem ipsum delor something something"
     })
-    console.log(post)
+    // console.log(post)
 }
 
 async function getPost() {
     const post = await Post.where('title').equals('Test Title')
-    console.log(post)
+    // console.log(post)
 }
 
 /* API Routes */

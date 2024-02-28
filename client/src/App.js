@@ -15,11 +15,23 @@ function App() {
                 // TODO: determine what the dtype of response.message before this cast
                 const myPosts = JSON.parse(response.message)
                 setPosts(myPosts);
+
+
+                // Load in the scripts, soldier
+                const LoadIFrameApiScript = document.createElement('script')
+                LoadIFrameApiScript.src = "https://open.spotify.com/embed/iframe-api/v1"
+                LoadIFrameApiScript.async = true
+
+                const IFrameOnReadyScript = document.createElement('script')
+                IFrameOnReadyScript.src = "iFrameReady.js"
+                IFrameOnReadyScript.type = "text/javascript"
+
+                document.body.append(LoadIFrameApiScript)
+                document.body.append(IFrameOnReadyScript)
             })
             .catch(err => console.log("App.js/getPosts error:\n", err))
     }, []);
 
-    console.log("posts: ", typeof(posts), posts)
     return (
             <div className="App">
                 <h1>I'm testing</h1>

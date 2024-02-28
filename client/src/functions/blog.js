@@ -10,7 +10,6 @@ export const getPosts = async () => {
                 "Content-Type": "application/json"
             }
         });
-        console.log('getPosts() ran')
         return await response.json()
     } 
     catch (err) {
