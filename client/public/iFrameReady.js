@@ -10,7 +10,7 @@ function getEmbedHeight(uri) {
 
 window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
     // Load Embeds
-    document.querySelectorAll(".hasEmbed").forEach( post => {
+    document.querySelectorAll(".embed").forEach( post => {
         const element = post
         const options = {
             width: '300',

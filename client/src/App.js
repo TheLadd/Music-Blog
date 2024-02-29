@@ -34,7 +34,11 @@ function App() {
 
     return (
             <div className="App">
-                <h1>I'm testing</h1>
+                <nav>
+                    <div>Nav 1</div>
+                    <div>Nav 2</div>
+                    <div>Nav 3</div>
+                </nav>
                 <PostList posts={posts}/>
             </div>
     );

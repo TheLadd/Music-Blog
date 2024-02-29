@@ -3,7 +3,7 @@ function Embed({ uri }) {
     if (uri === null) {
         return null
     }
-    return <div className="hasEmbed" id={uri}></div>
+    return <div className="embed" id={uri}></div>
 }
 
 
@@ -11,8 +11,10 @@ export default function Post({ post }) {
     // Make individual post components
     return (
         <div className='post'>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
+            <div>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+            </div>
             <Embed uri={post.uri} />
         </div>
     )

@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
+  /* Owen's Additions */
+  color: white;
+  background-color: #202327;
 }
 
 code {
@@ -12,6 +16,33 @@ code {
     monospace;
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+
+  height: 100px;
+}
+
+nav div {
+  height: 50px;
+  width: 50px;
+  margin: 10px;
+}
+
+
 div.post {
-  margin: 0;
+  margin: 20px auto;
+  padding: 20px 10px;
+  width: 45%;
+
+  border: solid 1px;
+  border-color: white;
+  border-radius: 20px;
+
+  display: flex;
+  justify-content: space-around;
+}
+
+div.post:has(iframe) div {
+  width: 60%
 }
