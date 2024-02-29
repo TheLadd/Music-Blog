@@ -6,6 +6,13 @@ function Embed({ uri }) {
     return <div className="embed" id={uri}></div>
 }
 
+function PostDate({ date }) {
+    if (date === null) {
+        return null
+    }
+    return <div className="PostDate"></div>
+}
+
 
 export default function Post({ post }) {
     // Make individual post components
@@ -13,6 +20,7 @@ export default function Post({ post }) {
         <div className='post'>
             <div>
                 <h3>{post.title}</h3>
+                <PostDate date={post.date} />
                 <p>{post.body}</p>
             </div>
             <Embed uri={post.uri} />
