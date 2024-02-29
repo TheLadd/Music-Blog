@@ -10,7 +10,7 @@ function getEmbedSize(type) {
     // the type of embedded content
     // Return: 
         // width, height
-    return (type === 'playlist' || type === 'album') ? [300, 355] : [300, 150]
+    return (type === 'playlist' || type === 'album') ? [300, 355] : ['80%', 80]
 }
 
 window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
@@ -20,14 +20,14 @@ window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
         const size = getEmbedSize(type)
 
         // Edit parent element styling based on content type
+            // NOTE: this could've been done in the Post component, but is done
+            // here instead because 'type' must be accessed here in order to 
+            // determine Embed size
         if (type !== 'playlist' && type !== 'album') {
-            console.log(post)
-            console.log(post.parentNode)
             post.parentNode.style.flexDirection = 'column';
-            // post.closest('div').style.flexDirection = 'column';
         }
 
-        // Create/load embed
+        // Create/load Embed
         const element = post
         const options = {
             width: size[0], 

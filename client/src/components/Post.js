@@ -20,7 +20,7 @@ export default function Post({ post }) {
         <div className='post'>
             <div>
                 <h3>{post.title}</h3>
-                <PostDate date={post.date} />
+                <PostDate date={post.createdAt} />
                 <p>{post.body}</p>
             </div>
             <Embed uri={post.uri} />

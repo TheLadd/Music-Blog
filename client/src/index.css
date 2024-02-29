@@ -46,3 +46,7 @@ div.post {
 div.post:has(iframe) div {
   width: 60%
 }
+
+iframe  {
+  margin: auto
+}
