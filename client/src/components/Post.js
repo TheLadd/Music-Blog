@@ -1,28 +1,27 @@
-function Embed({ uri }) {
-    // Determine whether or not this post links Spotify content
-    if (uri === null) {
-        return null
-    }
-    return <div className="embed" id={uri}></div>
-}
+// function Embed({ uri }) {
+//     // Determine whether or not this post links Spotify content
+//     if (uri === null) {
+//         return null
+//     }
+//     return <div className="embed" id={uri}></div>
+// }
 
-function PostDate({ date }) {
-    if (date === null) {
-        return null
-    }
-    return <div className="PostDate"></div>
-}
+// function PostDate({ date }) {
+//     if (date === null) {
+//         return null
+//     }
+//     return <div className="PostDate"></div>
+// }
+
+import Embed from './Embed'
+import PostText from './PostText'
 
 
 export default function Post({ post }) {
     // Make individual post components
     return (
         <div className='post'>
-            <div>
-                <h3>{post.title}</h3>
-                <PostDate date={post.createdAt} />
-                <p>{post.body}</p>
-            </div>
+            <PostText post={post} />
             <Embed uri={post.uri} />
         </div>
     )

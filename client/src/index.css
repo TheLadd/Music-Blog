@@ -1,3 +1,4 @@
+/* ----------- General ------------ */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -16,6 +17,8 @@ code {
     monospace;
 }
 
+
+/* ------------- Nav ------------- */
 nav {
   display: flex;
   justify-content: space-around;
@@ -30,10 +33,11 @@ nav div {
 }
 
 
+/* ---------------- Post ---------------- */
 div.post {
   margin: 20px auto;
-  padding: 20px 10px;
-  width: 45%;
+  padding: 1.5%;
+  width: 55%;
 
   border: solid 1px;
   border-color: white;
@@ -43,10 +47,29 @@ div.post {
   justify-content: space-around;
 }
 
-div.post:has(iframe) div {
-  width: 60%
-}
+    div.post div {
+      text-align: left;
+      width: 97%;
+    }
 
-iframe  {
-  margin: auto
-}
+    div.post div h3 {
+      margin: 0;
+    }
+    
+    div.post:has(iframe) div p {
+      margin: 10px 0 20px 0;
+      padding: 
+    }
+
+    div.post div div.PostDate {
+      color: gray;
+    }
+
+    div.post:has(iframe) div {
+      /* Only applies to divs in posts w/ an Embed */
+      width: 60%;
+    }
+
+    div.post iframe  {
+      margin: 0;
+    }
