@@ -2,6 +2,7 @@ import './App.css';
 import {useState, useEffect} from "react"
 import { getPosts } from "./functions/blog"
 import PostList from './components/PostList'
+import BlogNav from './components/BlogNav'
 
 function App() {
     const [posts, setPosts] = useState([]);
@@ -34,11 +35,7 @@ function App() {
 
     return (
             <div className="App">
-                <nav>
-                    <div>Nav 1</div>
-                    <div>Nav 2</div>
-                    <div>Nav 3</div>
-                </nav>
+                <BlogNav />
                 <PostList posts={posts}/>
             </div>
     );
