@@ -9,4 +9,6 @@ mongoose.connect(process.env.MONGO_URI)
         process.exit(1);
     });
 
+mongoose.set('setDefaultsOnInsert', true)
+
 module.exports = mongoose;
