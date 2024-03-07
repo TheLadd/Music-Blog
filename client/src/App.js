@@ -3,6 +3,8 @@ import {useState, useEffect} from "react"
 import { getPosts } from "./functions/blog"
 import PostList from './components/PostList'
 import BlogNav from './components/BlogNav'
+import BLog from './components/pages/blog.js'
+import { BrowserRouter, Routes } from 'react-router-dom';
 
 function App() {
     const [posts, setPosts] = useState([]);
@@ -34,10 +36,18 @@ function App() {
     }, []);
 
     return (
-            <div className="App">
-                <BlogNav />
-                <PostList posts={posts}/>
-            </div>
+            // <div className="App">
+            //     <BlogNav />
+            //     <PostList posts={posts}/>
+            // </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route 
+                        path='/'
+                        element={<Blog />}
+                    />
+                </Routes>
+            </BrowserRouter>
     );
 }
 
