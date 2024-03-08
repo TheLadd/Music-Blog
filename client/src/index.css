@@ -9,7 +9,7 @@ body {
   
   /* Owen's Additions */
   color: white;
-  background-color: #202327;
+  background-color: #232428;
 }
 
 code {
@@ -21,37 +21,50 @@ code {
 /* ------------- Nav ------------- */
 nav {
   display: flex;
-  justify-content: space-around;
-  align-content: center;
+  justify-content: space-between;
 
-  height: 120px;
-  padding: 20px 0;
+  height: 80px;
   border-bottom: solid 1px;
   border-color: gray;
-  margin-bottom: 50px;
 }
 
 nav div {
-  height: 100%;
-  width: 15%;
+  width: 60%;
+}
+
+nav ul {
+  width: 40%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
 
   display: flex;
-  justify-content: center;  /* justify-content aligns content along the main axis */
-  flex-direction: column;
-
-  border: solid 1px;
-  border-color:gray;
+  flex-direction: row;
 }
 
-nav div:hover {
+nav ul li {
+  width: 25%;
+  height: 75%;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* nav div:hover {
   background-color: rgb(98, 98, 98);
   transition: 0.5s;
-}
+} */
 
-nav div h3 {
-  margin: 0;
+/* nav div h3 {
+  margin: auto;
   vertical-align: middle;
   height: 20%;
+} */
+
+nav div h1 {
+  vertical-align: middle;
+  height: 40%;
+  margin: auto;
 }
 
 
@@ -59,7 +72,8 @@ nav div h3 {
 div.post {
   margin: 20px auto;
   padding: 1.5%;
-  width: 55%;
+  width: 45%;
+  min-width: 500px;
 
   border: solid 1px;
   border-color: gray;
@@ -80,7 +94,6 @@ div.post {
     
     div.post:has(iframe) div p {
       margin: 10px 0 20px 0;
-      padding: 
     }
 
     div.post div div.PostDate {
@@ -89,7 +102,7 @@ div.post {
 
     div.post:has(iframe) div {
       /* Only applies to divs in posts w/ an Embed */
-      width: 60%;
+      width: 50%;
     }
 
     div.post iframe  {

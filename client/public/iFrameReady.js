@@ -11,7 +11,7 @@ function getEmbedSize(type) {
     // the type of embedded content
     // Return: 
         // width, height
-    return (type === 'playlist' || type === 'album') ? ['40%', null] : ['100%', 80]
+    return (type === 'playlist' || type === 'album') ? ['50%', null] : ['100%', 80]
 }
 
 window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
@@ -29,8 +29,11 @@ window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
                 // but SpotifyIFrameAPI doesn't let me modify attributes of the iframe 
                 // tag that it generates
         if (type !== 'playlist' && type !== 'album') {
+            // Adjust format/position of Embed within a Post
             post.parentNode.style.flexDirection = 'column';
-            post.style.width = '100%';
+            
+            // Adjust width of PostBody of *this* body
+            post.parentNode.getElementsByClassName('PostText')[0].style.width = '100%';
         }
 
 
