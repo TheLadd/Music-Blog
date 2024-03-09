@@ -2,7 +2,6 @@
 export const getPosts = async () => {
     try {
         // const response = await fetch(process.env.BACKEND_URL + '/blog', {
-        // const response = await fetch('http://localhost:8080/test', {
         const response = await fetch('http://localhost:8080/blog', {
             method: 'GET',
             headers: {

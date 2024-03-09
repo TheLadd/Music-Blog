@@ -2,13 +2,13 @@ import {useState, useEffect} from "react"
 import { getPosts } from "../../functions/blog"
 
 //Components
+import Nav from '../Nav'
 import PostList from '../PostList'
-import BlogNav from '../BlogNav'
 
 export default function Blog() {
     const [posts, setPosts] = useState([]);
     
-    // Initialize the value of posts
+    // Fetch and initialize the value of posts
         // TODO: Figure out why this isn't just 'hard coded' above
             // Maybe it's because getPosts() is a promise?
     useEffect( () => {
@@ -36,7 +36,7 @@ export default function Blog() {
 
     return (
         <div className="blog">
-            <BlogNav />
+            <Nav activePage={1}/>
             <PostList posts={posts}/>
         </div>
     )

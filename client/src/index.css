@@ -1,4 +1,9 @@
 /* ----------- General ------------ */
+:root {
+  --backColor: #232428;
+  --highlightColor: rgb(52, 125, 52);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,7 +14,8 @@ body {
   
   /* Owen's Additions */
   color: white;
-  background-color: #232428;
+  /* background-color: #232428; */
+  background-color: var(--backColor);
 }
 
 code {
@@ -24,13 +30,25 @@ nav {
   justify-content: space-between;
 
   height: 80px;
+
+  margin-bottom: 60px;
   border-bottom: solid 1px;
   border-color: gray;
 }
 
 nav div {
   width: 60%;
+  padding: 20px 60px;
 }
+
+nav div h1 {
+  height: 40px;
+  width: 200px;
+  
+  line-height: 40px;
+  margin: 0;
+}
+
 
 nav ul {
   width: 40%;
@@ -40,32 +58,31 @@ nav ul {
 
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 nav ul li {
   width: 25%;
   height: 75%;
   margin: auto;
+
+  border: 1px solid;
+  border-color: var(--backColor);
+  border-radius: 5px;
+
   text-align: center;
-  vertical-align: middle;
+  line-height: 60px;  /* same as height (nav.height*.75=80px*.75=60px to vertically center text */
 }
 
-/* nav div:hover {
-  background-color: rgb(98, 98, 98);
-  transition: 0.5s;
-} */
+    nav ul li:hover {
+      transition: 0.2s;
+      color: gray;
+    }    
 
-/* nav div h3 {
-  margin: auto;
-  vertical-align: middle;
-  height: 20%;
-} */
-
-nav div h1 {
-  vertical-align: middle;
-  height: 40%;
-  margin: auto;
-}
+    nav ul li.currentPage {
+      border-color: var(--highlightColor);
+      background-color: var(--highlightColor);
+    }
 
 
 /* ---------------- Post ---------------- */
