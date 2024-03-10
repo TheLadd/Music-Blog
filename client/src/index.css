@@ -2,6 +2,7 @@
 :root {
   --backColor: #232428;
   --highlightColor: rgb(52, 125, 52);
+  --borderColor: gray;
 }
 
 body {
@@ -14,7 +15,6 @@ body {
   
   /* Owen's Additions */
   color: white;
-  /* background-color: #232428; */
   background-color: var(--backColor);
 }
 
@@ -33,7 +33,7 @@ nav {
 
   margin-bottom: 60px;
   border-bottom: solid 1px;
-  border-color: gray;
+  border-color: var(--borderColor);
 }
 
 nav div {
@@ -93,7 +93,7 @@ div.post {
   min-width: 500px;
 
   border: solid 1px;
-  border-color: gray;
+  border-color: var(--borderColor);
   border-radius: 7.5px;
 
   display: flex;

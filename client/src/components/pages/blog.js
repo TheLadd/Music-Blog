@@ -35,9 +35,9 @@ export default function Blog() {
     }, []);
 
     return (
-        <div className="blog">
+        <>
             <Nav activePage={1}/>
             <PostList posts={posts}/>
-        </div>
+        </>
     )
 }

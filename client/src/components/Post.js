@@ -18,7 +18,6 @@ import PostText from './PostText'
 
 
 export default function Post({ post }) {
-    // Make individual post components
     return (
         <div className='post'>
             <PostText post={post} />

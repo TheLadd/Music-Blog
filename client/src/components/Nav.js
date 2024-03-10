@@ -1,7 +1,5 @@
 export default function BlogNav({activePage}) {
-    console.log(`activePage: ${activePage}`)
     function isActive(i) {
-        console.log(i == activePage)
         return (i == activePage) ? "currentPage" : ""
     }
 
