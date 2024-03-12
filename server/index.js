@@ -19,17 +19,21 @@ const corsOptions = { origin: process.env.FRONTEND_URL }
 app.use(morgan('dev'));
 app.use(cors(corsOptions));
 
+// Important middlewares for receiving/deciphering JSON strings via HTTP
+app.use(express.json())
+app.use(express.urlencoded())
+
 
 /* routes */
     // Here, we import a express.Router object. Router objects essentially
     // contain multiple routes within themselves.
     // express_object.use(req, testRoutes) routes all requests
     // that start w/ 'req'  to the testRoutes express.Router object
-const testRoutes = require('./routes/test');
-app.use('/test', testRoutes);
-
 const blogRoutes = require('./routes/blog')
 app.use('/blog', blogRoutes)
+
+const adminRoutes = require('./routes/admin')
+app.use('/admin', adminRoutes)
 
 
 /* listen */
