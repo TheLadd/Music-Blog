@@ -3,8 +3,6 @@ const Post = require('../schemas/Post')
 
 const router = express.Router()
 router.post('/post', async (request, response) => {
-    console.log('message from admin page:\n', request.body)
-
     const newPost = {
         title: request.body.title,
         body: request.body.body,
@@ -12,6 +10,10 @@ router.post('/post', async (request, response) => {
         createdAt: Date.now()
     }
     Post.create(newPost)
+    
+    response.status(200).json({
+        message: `Post titled ${request.body.title} received` 
+    });
 })
 
 module.exports = router

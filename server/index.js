@@ -15,9 +15,10 @@ const app = express();
     // express_object.use(func) passes [request, response]
     // through func as params for *every* HTTP request
     // Any function used in this fashion is considered a 'middleware' function
-const corsOptions = { origin: process.env.FRONTEND_URL }
-app.use(morgan('dev'));
+// const corsOptions = { origin: process.env.FRONTEND_URL }
+const corsOptions = { origin: [process.env.FRONTEND_URL, process.env.ADMIN_URL] }
 app.use(cors(corsOptions));
+app.use(morgan('dev'));
 
 // Important middlewares for receiving/deciphering JSON strings via HTTP
 app.use(express.json())
@@ -32,8 +33,8 @@ app.use(express.urlencoded())
 const blogRoutes = require('./routes/blog')
 app.use('/blog', blogRoutes)
 
-const adminRoutes = require('./routes/admin')
-app.use('/admin', adminRoutes)
+// const adminRoutes = require('./routes/admin')
+// app.use('/admin', adminRoutes)
 
 
 /* listen */
