@@ -15,13 +15,12 @@ router.get('/get', async (request, response) => {
 
 router.post('/post', async (request, response) => {
     // Create new post
-    const newPost = {
+    Post.create({
         title: request.body.title,
         body: request.body.body,
         uri: (request.body.uri == '') ? null : request.body.uri,
         createdAt: Date.now()
-    }
-    Post.create(newPost)
+    })
     
     response.status(200).json({
         message: `Post titled ${request.body.title} received` 
@@ -30,21 +29,29 @@ router.post('/post', async (request, response) => {
 
 router.put('/put', async (request, response) => {
     // Recieve edits in the form of Post Objects
-    console.log(request.body)
-    console.log(`idFilter: ${request.body.id}`)
-    const postUpdate = {}
+    try {
+        const targetId = request.body.id
+        const postUpdate = {}
 
-    // Only update the editted values
-    for (const [key, value] of Object.entries(request.body)) {
-        if (value !== "" && value !== null && key != 'id') {
-            postUpdate[key] = value
+        // Only update the editted values
+        for (const [key, value] of Object.entries(request.body)) {
+            if (value !== "" && value !== null && key != 'id') {
+                postUpdate[key] = value
+            }
         }
+        
+        const temp = await Post.findByIdAndUpdate(targetId, postUpdate)
+        response.status(200).json({
+            message: "Post edit processed"
+        })
     }
-    
-    console.log(postUpdate)
-    // Post.findOneAndUpdate(idFilter, postUpdate)
-    const temp = await Post.findByIdAndUpdate(request.body.id, postUpdate)
-    console.log(`Finished: ${temp}`)
+    catch (err) {
+        console.log('Error occured in recieving edit', err)
+
+        response.status(500).json({
+            message: `Error in processing edit: ${err}`
+        })
+    }
 })
 
 module.exports = router;
