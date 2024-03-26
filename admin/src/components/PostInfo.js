@@ -15,10 +15,6 @@ export default function PostInfo({ register }) {
             <label htmlFor="PostUri">URI: </label>
             <input id='PostUri' name="PostUri" {...register('uri')} />
         </li>
-
-        <li>
-            <input type="submit"></input>
-        </li>
     </>
  )   
 }

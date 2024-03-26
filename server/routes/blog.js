@@ -54,4 +54,20 @@ router.put('/put', async (request, response) => {
     }
 })
 
+router.delete('/delete', async ( req, res ) => {
+    try {
+        await Post.findByIdAndDelete(req.body.id)
+        res.status(200).json({
+            message: `Post ${req.body.id} deleted`
+        })
+    }
+    catch (err) {
+        console.log(err)
+        res.status(500).json({
+            message: `Issue proccessing delete request on server. Error: ${err}`
+        })
+    }
+
+})
+
 module.exports = router;

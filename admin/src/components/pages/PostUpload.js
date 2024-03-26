@@ -1,13 +1,11 @@
 import { useForm } from "react-hook-form"
-import { sendPost } from '../functions/sendPost'
+import { sendPost } from '../../functions/sendPost'
 
-import PostForm from './PostForm'
-import PostInfo from './PostInfo'
+import PostForm from '../PostForm'
+import PostInfo from '../PostInfo'
 
 export default function PostUpload() {
-    const onSubmit = (data, e) => { 
-        sendPost(data) 
-    }
+    const onSubmit = (data, e) => { sendPost(data) }
     const onError = (errors, e) => { console.log("PostUpload encountered error", errors) }
 
     // Set params for components to pass to PostForm
@@ -15,7 +13,6 @@ export default function PostUpload() {
 
     return (
         <PostForm 
-            // handleSubmit={ () => { handleSubmit(onSubmit, onError) } } 
             onSubmit={ onSubmit }
             onError={ onError }
             elems={ [PostInfo] }  

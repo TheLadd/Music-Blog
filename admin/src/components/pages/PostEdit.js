@@ -1,13 +1,13 @@
 import {useState, useEffect} from "react"
-import { useForm } from "react-hook-form"
-import { getPosts } from "../functions/getPosts"
-import { sendEdit } from "../functions/sendEdit"
+import { getPosts } from "../../functions/getPosts"
+import { sendEdit } from "../../functions/sendEdit"
 
-import PostForm from './PostForm'
-import PostSelect from "./PostSelect"
-import PostInfo from "./PostInfo"
+import PostForm from '../PostForm'
+import PostSelect from "../PostSelect"
+import PostInfo from "../PostInfo"
 
 export default function PostEdit() {
+    const onError = (errors, e) => { console.log("PostEdit encountered error", errors) }
     const [posts, setPosts] = useState([]);
 
     // Fetch posts from backend so that we can choose which one to edit
@@ -19,23 +19,13 @@ export default function PostEdit() {
             })
     }, [])
 
-    // const { register, handleSubmit } = useForm()
-    const onError = (errors, e) => { console.log("PostEdit encountered error", errors) }
-
 
     // Set params of componenets to be fed into the PostForm
-    const SelectParams = {
-        posts: posts
-        // register: register
-    }
-
-    const InfoParams = {
-        // register: register
-    }
+    const SelectParams = { posts: posts }
+    const InfoParams = {}
     
     return (
         <PostForm 
-            // handleSubmit={ () => { handleSubmit(sendEdit, onError) } }
             onSubmit={ sendEdit }
             onError={ onError }
             elems={[ PostSelect, PostInfo ]} 

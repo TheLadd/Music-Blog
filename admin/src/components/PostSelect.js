@@ -4,9 +4,11 @@ export default function PostSelect({ posts, register }) {
         const targetId = select.options[ select.selectedIndex ].value
         const selectedPost = posts.find( post => post._id === targetId)
 
-        document.getElementById('PostTitle').value = selectedPost.title
-        document.getElementById('PostBody').value = selectedPost.body 
-        document.getElementById('PostUri').value = selectedPost.uri
+        if (document.getElementById('PostTitle')) {
+            document.getElementById('PostTitle').value = selectedPost.title
+            document.getElementById('PostBody').value = selectedPost.body 
+            document.getElementById('PostUri').value = selectedPost.uri
+        }
     }
 
     const PostOptions = posts.map( post => {

@@ -16,4 +16,8 @@ router.post('/post', async (request, response) => {
     });
 })
 
+router.delete('/delete', async  (req, res) => {
+    console.log(req.body)
+})
+
 module.exports = router

@@ -18,12 +18,16 @@ export default function PostForm({ onSubmit, onError, elems, params}) {
     return (
         // <form onSubmit={ handleSubmit(onSubmit, onError) }>
         <form onSubmit={ handleSubmit(submitAndClear, onError) }>
-            <ul>{
-                elems.map( (elem, i) => {
+            <ul>
+                { elems.map( (elem, i) => {
                     params[i]['register'] = register
                     return createElement(elem, params[i]) 
-                })    
-            }</ul>
+                })}
+            
+                <li>
+                    <input type="submit"></input>
+                </li>
+            </ul>
         </form>
     )
 }
