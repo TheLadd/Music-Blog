@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
           {/* <Route path='/' element={<Navigate to="/blog/post" />} /> */}
-          <Route path='/' element={<Navigate to="/portfolio/post" />} />
+          <Route path='/' element={ <Navigate to="/portfolio/post" />} />
 
           <Route path='/blog/post' element={ <PostUpload /> } />
           <Route path='/blog/edit' element={ <PostEdit /> } />
