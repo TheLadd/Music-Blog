@@ -28,7 +28,7 @@ router.post('/post', async (request, response) => {
 })
 
 router.put('/put', async (request, response) => {
-    // Recieve edits in the form of Post Objects
+    // Recieve edit in the form of Post Objects
     try {
         const targetId = request.body.id
         const postUpdate = {}
@@ -47,7 +47,6 @@ router.put('/put', async (request, response) => {
     }
     catch (err) {
         console.log('Error occured in recieving edit', err)
-
         response.status(500).json({
             message: `Error in processing edit: ${err}`
         })
@@ -67,7 +66,6 @@ router.delete('/delete', async ( req, res ) => {
             message: `Issue proccessing delete request on server. Error: ${err}`
         })
     }
-
 })
 
 module.exports = router;

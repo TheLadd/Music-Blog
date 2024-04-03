@@ -66,8 +66,8 @@ nav ul li {
   height: 75%;
   margin: auto;
 
-  border: 1px solid;
-  border-color: var(--backColor);
+  /* border: 1px solid; */
+  /* border-color: var(--backColor); */
   border-radius: 5px;
 
   text-align: center;
