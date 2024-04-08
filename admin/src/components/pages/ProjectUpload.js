@@ -5,7 +5,6 @@ import { sendProject } from '../../functions/sendProject'
 
 export default function ProjectUpload() {
     const onError = (err, e) => { console.log(`Error on form submit: ${err}`)}
-    
 
     const InfoParams = {}
 

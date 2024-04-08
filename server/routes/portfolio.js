@@ -25,7 +25,9 @@ router.post('/post', async (req, res) => {
     })
 })
 
-router.put('/put', async (req, res) => {})
+router.put('/put', async (req, res) => {
+    console.log('Project put', req.body)
+})
 
 router.delete('/delete', async (req, res) => {})
 

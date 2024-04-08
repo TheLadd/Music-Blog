@@ -1,5 +1,5 @@
 export const getProjects = async () => {
-    const serverUrl = 'http://localhost:8080/portfolio/'
+    const serverUrl = 'http://localhost:8080/portfolio/get'
     try {
         const response = await fetch(serverUrl, {
             method: 'GET',
