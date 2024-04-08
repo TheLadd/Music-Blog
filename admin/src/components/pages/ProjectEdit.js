@@ -14,7 +14,7 @@ export default function ProjectEdit() {
             const myProjects = JSON.parse(response.message)
             setProjects( myProjects )
         })
-    })
+    }, [])
 
     const SelectParams = { projects: projects }
     const InfoParams = {}

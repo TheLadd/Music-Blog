@@ -9,7 +9,6 @@ export const sendDelete = async ( data ) => {
                 "Content-type": 'application/json; charset=UTF-8'
             }
         })
-        console.log(`response.body: ${response.body}`)
         return await response.json()
     }
     catch {
