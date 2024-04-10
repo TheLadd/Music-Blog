@@ -16,6 +16,11 @@ export default function Blog() {
             .then(response => {
                 // TODO: determine what the dtype of response.message before this cast
                 const myPosts = JSON.parse(response.message)
+                myPosts.sort( ( a, b ) => {
+                    if (a.createdAt < b.createdAt) { return 1 }
+                    if (a.createdAt > b.createdAt) { return -1 }
+                    return 0
+                })
                 setPosts(myPosts);
 
 

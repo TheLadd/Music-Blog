@@ -10,6 +10,10 @@ export default function ProjectInfo({ register }) {
                 <textarea name="ProjectDesc" id="ProjectDesc" {...register('desc')} />
             </li>
             <li>
+                <label htmlFor="ProjectTech">Tech Used:  </label>
+                <textarea name="ProjectTech" id="ProjectTech" {...register('tech')} />
+            </li>
+            <li>
                 <label htmlFor="ProjectDemo">Demo Link: </label>
                 <input type='text' name="ProjectDemo" id="ProjectDemo" {...register('demo')} /> 
             </li>

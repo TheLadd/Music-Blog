@@ -22,10 +22,14 @@ router.get('/get', async (req, res) => {
 
 router.post('/post', async (req, res) => {
     try {
+        const techList = req.body.tech.split(',')
+        console.log(`tech used: ${typeof(techList)}`)
+
         Project.create({
             title: req.body.title,
             desc: req.body.desc,
             repo: req.body.repo,
+            tech: techList,
             demo: req.body.demo,
             dateCreated: req.body.dateCreated
         })

@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const projectSchema = mongoose.Schema({
     title: String,
     desc: String,
+    tech: [ String ],
     repo: String,
     demo: String,
     dateCreated: Date
