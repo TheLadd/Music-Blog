@@ -58,6 +58,10 @@ router.put('/put', async (req, res) => {
             }
         }
 
+        if ('tech' in projectUpdate) {
+            projectUpdate['tech'] = projectUpdate['tech'].split(',')
+        }
+
         const update = await Project.findByIdAndUpdate(targetId, projectUpdate)
         res.status(200).json({
             message: `Project ${targetId} updated` 
