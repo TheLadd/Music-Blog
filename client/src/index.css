@@ -91,16 +91,27 @@ footer {
   background-color: var(--borderColor);
   display: flex;
   align-items: center;
+
   padding: 0 50px;
+  margin-top: 60px;
 }
 
 footer a {
-  margin: 10px;
+  margin: auto 20px;
+}
+
+footer a:first-child {
+  margin-left: 10px;
 }
 
 footer a img {
   height: 42px;
   width: 42px;
+}
+
+footer a img:hover {
+  filter: brightness(0%);
+  transition: 0.5s;
 }
 
 
@@ -135,6 +146,10 @@ div.post {
     div.post div div.PostDate {
       color: gray;
     }
+
+    div.post div.PostText p.PostBody {
+      white-space: pre-wrap;
+    } 
 
     div.post:has(iframe) div {
       /* Only applies to divs in posts w/ an Embed */
@@ -174,6 +189,7 @@ div.project {
   display: flex;
   flex-direction: column;
 }
+
 
 div.project h3 {
   margin: 0;
