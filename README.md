@@ -1,5 +1,4 @@
 # Music-Blog
 An introduction to the MERN stack.
 
-MongoDB UN: owenribera
-MongoDB PW: CHrfXOxUEmcms1Vg
+This is a full-stack project, including a front-end (/client) and a backend (/server). The site's purpose is two-fold: to serve as a personal portfolio and a blog with embedded spotify content. Pretty fun!  

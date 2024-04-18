@@ -1,7 +1,6 @@
 export const getProjects = async () => {
-    const serverUrl = 'http://localhost:8080/portfolio/get'
     try {
-        const response = await fetch(serverUrl, {
+        const response = await fetch(process.env.REACT_APP_BACKEND_URL + 'portfolio/get', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
