@@ -10,6 +10,6 @@ export const getProjects = async () => {
         return await response.json()
     }
     catch (err) {
-        console.log(`Error getting projects from ${serverUrl}`, err)
+        console.log(`Error getting projects from ${process.env.REACT_APP_BACKEND_URL}`, err)
     }
 }
