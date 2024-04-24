@@ -1,3 +1,5 @@
+import context from '../../public/netflify-context.txt'
+
 // A function that makes an HTTP request to BACKEND_URL
 export const getPosts = async () => {
     try {
