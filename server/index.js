@@ -35,7 +35,17 @@ app.use('/blog', blogRoutes)
 const portfolioRoutes = require('./routes/portfolio')
 app.use('/portfolio', portfolioRoutes)
 
-app.use('/', blogRoutes)
+app.use('/', (req, res, next) => {
+
+    res.status(200).json({
+        status: 'success',
+        data: {
+            name: 'Site up!',
+            version: '0.1.0'
+        }
+    });
+
+});
 
 /* listen */
     // Binds PORT to listen for HTTP requests

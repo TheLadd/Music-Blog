@@ -5,17 +5,6 @@ const Post = require('../schemas/Post.js')
 // NOTE: the database is accessed via the 'Post' model, which corresponds to the 'posts' collection
 const router = express.Router()
 
-router.use('/', (req, res, next) => {
-
-    res.status(200).json({
-        status: 'success',
-        data: {
-            name: 'ribera-personal-site, test',
-            version: '0.1.0'
-        }
-    });
-
-});
 
 router.get('/get', async (request, response) => {
     // Get all posts
