@@ -3,6 +3,7 @@
 // A function that makes an HTTP request to BACKEND_URL
 export const getPosts = async () => {
     try {
+        console.log(`Attempting fetch from ${process.env.REACT_APP_BACKEND_URL}`)
         const response = await fetch(process.env.REACT_APP_BACKEND_URL + 'blog/get', {
         // const response = await fetch(process.env.BACKEND_URL + '/blog/get', {
             method: 'GET',
