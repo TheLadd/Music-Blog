@@ -15,6 +15,5 @@ export const getPosts = async () => {
     } 
     catch (err) {
         console.log(`Error occured fetching posts from ${process.env.REACT_APP_BACKEND_URL}\n`, err)
-        // console.log(`Error occured fetching posts from ${process.env.BACKEND_URL}\n`, err)
     }
 }
