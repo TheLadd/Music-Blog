@@ -29,7 +29,7 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  height: 80px;
+  /* height: 80px; */
   width: 100%;
 
   margin-bottom: 60px;
@@ -39,7 +39,8 @@ nav {
 
 nav div {
   width: 60%;
-  padding: 20px 60px;
+  padding: 20px 6%;
+  height: 80px;
 }
 
 nav div h1 {
@@ -53,6 +54,7 @@ nav div h1 {
 
 nav ul {
   width: 40%;
+  height: 80px;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -161,6 +163,7 @@ div.post {
 
     div.post iframe  {
       margin: 0;
+      margin-bottom: 20px;
     }
 
 
