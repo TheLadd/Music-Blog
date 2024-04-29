@@ -118,7 +118,7 @@ footer a img:hover {
 
 /* ---------------- Post ---------------- */
 div.post {
-  margin: 20px max(auto, 20px);
+  margin: 20px auto;
   padding: 1.5%;
   width: 45%;
   min-width: 350px;
