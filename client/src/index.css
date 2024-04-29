@@ -30,6 +30,7 @@ nav {
   justify-content: space-between;
 
   height: 80px;
+  width: 100%;
 
   margin-bottom: 60px;
   border-bottom: solid 1px;
@@ -117,7 +118,7 @@ footer a img:hover {
 
 /* ---------------- Post ---------------- */
 div.post {
-  margin: 20px auto;
+  margin: 20px max(auto, 20px);
   padding: 1.5%;
   width: 45%;
   min-width: 500px;
@@ -154,6 +155,7 @@ div.post {
     div.post:has(iframe) div {
       /* Only applies to divs in posts w/ an Embed */
       width: 50%;
+      padding-right: 20px;
     }
 
     div.post iframe  {
