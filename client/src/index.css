@@ -121,7 +121,7 @@ div.post {
   margin: 20px max(auto, 20px);
   padding: 1.5%;
   width: 45%;
-  min-width: 500px;
+  min-width: 350px;
 
   border: solid 1px;
   border-color: var(--borderColor);
@@ -129,6 +129,7 @@ div.post {
 
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
     div.post div {
