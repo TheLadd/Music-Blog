@@ -164,9 +164,9 @@ div.post {
 
     div.post iframe  {
       margin: 0;
-      margin-bottom: 20px;
+      /* margin-bottom: 20px; */
 
-      min-width: 250px;
+      min-width: 200px;
     }
 
 
