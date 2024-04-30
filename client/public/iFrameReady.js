@@ -35,10 +35,10 @@ window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
             // Adjust width of PostBody of *this* body
             post.parentNode.getElementsByClassName('PostText')[0].style.width = '100%';
         }
-        else {
-            post.parentNode.getElementsByClassName('PostText')[0].stlye.width = '45%';
-            post.parentNode.getElementsByClassName('PostText')[0].stlye.minWidth = '250px';
-        }
+        // else {
+        //     post.parentNode.getElementsByClassName('PostText')[0].stlye.width = '45%';
+        //     // post.parentNode.getElementsByClassName('PostText')[0].stlye.minWidth = '250px';
+        // }
 
 
         // Create/load Embed
