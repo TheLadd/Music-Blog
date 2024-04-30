@@ -158,7 +158,7 @@ div.post {
 
     div.post:has(iframe) div {
       /* Only applies to divs in posts w/ an Embed */
-      width: 50%;
+      width: 45%;
       padding-right: 10px;
     }
 
