@@ -36,7 +36,7 @@ window.onSpotifyIframeApiReady = ( iFrameAPI ) => {
             post.parentNode.getElementsByClassName('PostText')[0].style.width = '100%';
         }
         else {
-            post.parentNode.getElementsByClassName('PostText')[0].style.minWidth = '200px';
+            post.parentNode.getElementsByClassName('PostText')[0].style.minWidth = '185px';
         }
 
 
